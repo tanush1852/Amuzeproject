@@ -1,0 +1,179 @@
+.bro {
+  height: 0px;
+  width: 0;
+
+  display: none;
+  max-width: 0%;
+}
+
+.rectangleIcon {
+  height: 69px;
+  width: 966px;
+  position: relative;
+  display: none;
+  max-width: 100%;
+}
+.pngimg1Icon {
+  height: 54px;
+  width: 55px;
+  position: relative;
+  object-fit: cover;
+  z-index: 1;
+}
+.optionsExpand,
+.pngimg {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.pngimg {
+  flex: 1;
+  background-color: var(--color-black);
+  padding: var(--padding-6xs) var(--padding-5xs) var(--padding-5xs);
+}
+.optionsExpand {
+  align-self: stretch;
+  padding: 0 var(--padding-50xl) 0 75px;
+}
+.rectangleIcon1 {
+  width: 1104px;
+  height: 596px;
+  position: relative;
+  display: none;
+}
+.rectangleParent,
+.trackContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.rectangleParent {
+  flex: 1;
+  background-color: var(--color-darkslategray);
+  overflow-x: auto;
+  flex-direction: column;
+  padding: var(--padding-50xl) 68px var(--padding-51xl);
+  gap: 28px;
+}
+.trackContainer {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-7xs);
+}
+.rectangleIcon2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.rectangleIcon3,
+.titleAndArtist {
+  position: absolute;
+  top: 0.2px;
+  left: 0;
+  width: 118px;
+  height: 30px;
+  z-index: 1;
+}
+.titleAndArtist {
+  top: 0;
+  left: 8px;
+  display: inline-block;
+  width: 119px;
+  height: 33.1px;
+  z-index: 2;
+}
+.rectangleContainer {
+  position: absolute;
+  top: 6.8px;
+  left: 497px;
+  width: 127px;
+  height: 33.1px;
+}
+.rectangleGroup {
+  width: 966px;
+  height: 69px;
+  position: relative;
+  max-width: 100%;
+}
+.optionsExpandParent,
+.trackContainerParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.trackContainerParent {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 24px;
+}
+.optionsExpandParent {
+  width: 1110px;
+  align-items: flex-end;
+  gap: var(--gap-50xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-heebo);
+}
+.homeScreenDarkInner {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl) 0 28px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.homeScreenDark {
+  width: 100%;
+  position: relative;
+  background: linear-gradient(180deg, #4a0097, transparent);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+  box-sizing: border-box;
+  gap: 1px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1275px) {
+  .optionsExpand,
+  .rectangleParent {
+    padding-left: var(--padding-18xl);
+    padding-right: var(--padding-15xl);
+    box-sizing: border-box;
+  }
+  .rectangleParent {
+    padding-left: var(--padding-15xl);
+  }
+  .optionsExpandParent {
+    gap: var(--gap-15xl);
+  }
+}
+@media screen and (max-width: 900px) {
+  .rectangleParent {
+    padding-top: var(--padding-26xl);
+    padding-bottom: var(--padding-26xl);
+    box-sizing: border-box;
+  }
+  .optionsExpandParent {
+    gap: var(--gap-mid);
+  }
+}
+@media screen and (max-width: 450px) {
+  .titleAndArtist {
+    font-size: var(--font-size-base);
+  }
+}

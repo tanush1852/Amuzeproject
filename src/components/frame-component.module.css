@@ -1,0 +1,10 @@
+.topGroupWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+ /* Add margin-bottom instead of padding-bottom */
+  box-sizing: border-box;
+  width: 100%; /* Ensure the wrapper takes up the full width */
+}

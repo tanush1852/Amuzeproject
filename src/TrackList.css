@@ -1,0 +1,97 @@
+img {
+    width: 1em; /* Set the width relative to the font size */
+    height: 1em; /* Set the height relative to the font size */
+    vertical-align: middle; /* Align the icon vertically with the text */
+    margin-right: 0.5em; /* Add margin to separate the icon from the text */
+  }
+  .removeButton {
+    border: none; /* Remove border */
+    padding: 0 4px 0 4px; /* Remove padding */
+    opacity:0;
+    aspect-ratio: 1/1;
+    background: transparent; /* Remove background */ /* Set the color of the cross icon */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 1em; /* Set font size */
+    width: 1em; /* Set width to create a square button */
+    height: 1em; /* Set height to create a square button */
+    display: flex; /* Use inline-flex to align vertically */
+    align-items: center; /* Align content vertically */
+    justify-content: center; /* Align content horizontally */
+    transition: color 0.3s ease; /* Add transition effect for color change */
+  }
+  
+  /* Style for the "cross" icon */
+  .removeButton:hover {
+    color: #ff1744; /* Change color on hover */
+  }
+  .trackListContainer { /* Ensure relative positioning for child elements */
+  max-height: 300px; /* Set a max height to enable scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.trackList {
+  list-style: none;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.fixedButtonsContainer {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff; /* Background color for the buttons container */
+  padding: 10px; /* Add padding to the buttons container */
+  display: flex;
+  justify-content: space-between;
+  scroll-behavior: auto;
+}
+
+.clearAllButton,
+.submitListButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clearAllButton {
+  background-color: #ff6347; /* Red color for Clear All button */
+  color: #fff;
+}
+
+.submitListButton {
+  background-color: #4caf50; /* Green color for Submit List button */
+  color: #fff;
+}
+
+  
+  .trackList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+button {
+  margin: 0 0.5rem 0 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgb(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+button:hover{
+  background: rgb(0, 0, 0, 1);
+}
+
+.cool {
+  overflow-y: auto;
+}
+.power {
+  display:flex;
+  flex-direction: column;
+}

@@ -1,0 +1,123 @@
+.rectangle {
+  align-self: stretch;
+  height: 114px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.expand,
+.indeedx,
+.options {
+  position: relative;
+  z-index: 1;
+}
+.indeedx {
+  align-self: stretch;
+  height: 1px;
+  border-top: 1px solid var(--color-white);
+  box-sizing: border-box;
+}
+.expand,
+.options {
+  display: inline-block;
+  flex-shrink: 0;
+}
+.options {
+  width: 1313px;
+  white-space: pre-wrap;
+  max-width: 100%;
+  color: white;
+  text-align:left;
+  justify-content: flex-start;
+  ;
+}
+.expand {
+  width: 234px;
+  margin-left: -654px;
+}
+.optionsParent {
+  width: 1313px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.feedback {
+  position: relative;
+  display: inline-block;
+  min-width: 89px;
+  z-index: 2;
+  margin-left: -406px;
+}
+.frameGroup {
+  width: 1313px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.companyName {
+  position: relative;
+  z-index: 1;
+}
+.bottomGroup,
+.bottomGroupInner,
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.frameParent {
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.bottomGroup,
+.bottomGroupInner {
+  align-self: stretch;
+  justify-content: flex-end;
+  padding: 0 var(--padding-48xl) 0 var(--padding-51xl);
+  box-sizing: border-box;
+}
+.bottomGroup {
+  position: fixed; /* Set the position to fixed */
+  bottom: 0; /* Position it at the bottom of the viewport */
+  left: 0; /* Align it with the left edge of the viewport */
+  width: 100%; /* Set the width to cover the entire viewport */
+  height: 69px; /* Set the desired height */
+  background-color: var(--color-darkslategray); /* Set the desired background color */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-xs) 0; /* Adjust padding as needed */
+  z-index: 1000; /* Ensure it's above other content */
+}
+@media screen and (max-width: 1625px) {
+  .frameParent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1275px) {
+  .bottomGroupInner {
+    padding-left: var(--padding-16xl);
+    padding-right: var(--padding-14xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 900px) {
+  .bottomGroup {
+    gap: var(--gap-xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .companyName,
+  .expand,
+  .feedback,
+  .options {
+    font-size: var(--font-size-base);
+  }
+}

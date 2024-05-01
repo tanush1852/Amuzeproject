@@ -1,0 +1,74 @@
+.rectangleIcon {
+  height: 69px;
+  width: 966px;
+  position: relative;
+  display: none;
+  max-width: 100%;
+}
+.imageIcon {
+  height: 54px;
+  width: 55px;
+  position: relative;
+  object-fit: cover;
+  z-index: 1;
+}
+.nameOfLove {
+  margin: 0;
+}
+.iceSpice {
+  margin: 0;
+  color: var(--color-darkgray);
+}
+.titleAndArtistContainer {
+  width: 591.5px;
+  height: 48px;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  max-width: 100%;
+  z-index: 1;
+}
+.titleAndArtistWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl) 0 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.pngwing1Icon {
+  width: 37px;
+  height: 43px;
+  position: relative;
+  object-fit: cover;
+  z-index: 2;
+}
+.pngwing1Wrapper,
+.track9 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) 0 0;
+}
+.track9 {
+  width: 966px;
+  background-color: var(--color-black);
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-sm) var(--padding-6xs)
+    var(--padding-16xl);
+  box-sizing: border-box;
+  gap: var(--gap-11xl);
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-heebo);
+}
+@media screen and (max-width: 450px) {
+  .titleAndArtistContainer {
+    font-size: var(--font-size-base);
+  }
+}
