@@ -28,7 +28,7 @@ function Search() {
   };
 
   const handleExportToCSV = () => {
-    const csvData = selectedTracks.map(track => `${track.image}${track.id},${track.name},${track.artist}`).join('\n');
+    const csvData = selectedTracks.map(track => `${track.id},${track.name},${track.artist}`).join('\n');
 
     axios.post('http://localhost:8080/track-info', { csvData }, {
       headers: {

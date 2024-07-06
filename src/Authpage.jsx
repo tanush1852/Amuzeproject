@@ -3,37 +3,50 @@ import "./Auth.css";
 import { useNavigate } from 'react-router-dom';
 import logo from "./amuze logo.png";
 import "./App.css"
+
 function AuthPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
-  const [isLoading, setIsLoading] = useState(false); // Add loading state
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // Set loading to true when form is submitted
-    // Perform authentication logic here
-    if (isLogin) {
-      const storedEmail = localStorage.getItem('email');
-      const storedPassword = localStorage.getItem('password');
+    setIsLoading(true);
 
-      if (email === storedEmail && password === storedPassword) {
-        // Navigate after a short delay to show the preloader
-        setTimeout(() => {
+    const url = isLogin ? 'http://localhost:8080/api/login' : 'http://localhost:8080/api/register';
+    
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        if (isLogin) {
+          // Navigate after a short delay to show the preloader
+          setTimeout(() => {
+            setIsLoading(false);
+            navigate("/search");
+          }, 2000);
+        } else {
           setIsLoading(false);
-          navigate("/search");
-        }, 2000); // Adjust delay as needed
+          alert('Account created successfully! Please Login!');
+          setIsLogin(true);
+        }
       } else {
         setIsLoading(false);
-        alert('Invalid email or password');
+        alert(data.message || 'An error occurred');
       }
-    } else {
-      localStorage.setItem('email', email);
-      localStorage.setItem('password', password);
+    } catch (error) {
       setIsLoading(false);
-      alert('Account created successfully! Please Login!')
-      setIsLogin(true);
+      alert('An error occurred. Please try again.');
     }
   };
 

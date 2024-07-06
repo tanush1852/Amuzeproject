@@ -8,11 +8,6 @@ import csv
 # Set up connection to Spotify API
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=parameters.SPOTIFY_CLIENT_ID, client_secret=parameters.SPOTIFY_CLIENT_SECRET))
 
-def save_recommendations_to_json(recommendations_list, filename='./src/recom.js'):
-    with open(filename, 'w') as json_file:
-        json.dump(recommendations_list, json_file, indent=4)
-    print(f'Recommendations saved to {filename}')
-
 def save_recommendations_to_js(recommendations_list, filename='./src/recom.js'):
     with open(filename, 'w') as js_file:
         js_file.write('import React from "react";\n')

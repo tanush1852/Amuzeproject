@@ -7,7 +7,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.4.4",
     "react": "^18.2.0",
     "react-autosuggest": "^10.1.0",
     "react-csv": "^2.2.2",
@@ -22,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "proxy": "http://localhost:8080"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +48,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "nodemon": "^3.1.4",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
   }

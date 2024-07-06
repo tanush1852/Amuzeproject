@@ -5,6 +5,9 @@ const fs = require('fs');
 const cors = require('cors'); // Import the CORS middleware
 const app = express();
 const port = 8080;
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const path = require('path');
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -12,6 +15,53 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const ratingsFilePath = 'ratings.json';
+
+// MongoDB connection
+mongoose.connect('mongodb+srv://aniketpethe007:aniketamuze@amuze.mwjsfpl.mongodb.net/?retryWrites=true&w=majority&appName=amuze', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => console.log('Connected to MongoDB Atlas'))
+  .catch(err => console.error('Could not connect to MongoDB Atlas', err));
+
+// User model
+const User = mongoose.model('User', new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true }
+}));
+
+// Authentication routes
+app.post('/api/register', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = new User({ email, password: hashedPassword });
+    await user.save();
+    res.status(201).json({ message: 'User created successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+app.post('/api/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid email or password' });
+    }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Invalid email or password' });
+    }
+    res.json({ message: 'Login successful' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 app.post('/api/saveRating', async (req, res) => {
   const { rating } = req.body;
@@ -85,6 +135,10 @@ app.get('/save-tracks', (req, res) => {
   python.on('close', (code) => {
     console.log(`child process close all stdio with code ${code}`);
   });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
