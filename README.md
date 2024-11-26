@@ -6,7 +6,7 @@ To address this problem, our project aims to develop a web-based platform that u
 
 To run the React App in development mode, run `npm i` followed by `npm start`.
 
-To run the server to start the Python script, run `node server.js`.
+To start the server, run `node server.js`.
 
 - `Utils` folder contains the utility functions required for the ML algorithm.
 - `Data` folder contains the dataset used for preprocessing and searching similar songs.
